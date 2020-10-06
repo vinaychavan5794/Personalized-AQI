@@ -1,0 +1,64 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+
+
+        <import type="android.view.View" />
+
+        <import type="com.fitbitsample.util.StringUtil" />
+
+        <variable
+            name="callback"
+            type="com.fitbitsample.listener.DialogListener" />
+
+        <variable
+            name="networkError"
+            type="com.fitbitsample.network.NetworkError" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:minWidth="@dimen/_255sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_20sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text="@{networkError.description}"
+            android:textSize="@dimen/_15ssp" />
+
+        <TextView
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxLines="5"
+            android:visibility="@{StringUtil.isEmpty(networkError.recommendation) ? View.GONE : View.VISIBLE}"
+            android:text="@{networkError.recommendation}"
+            android:textSize="@dimen/_13ssp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp" />
+
+        <androidx.appcompat.widget.ButtonBarLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+
+            <Button
+                style="@style/button"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{() -> callback.ok()}"
+                android:text="@string/ok" />
+        </androidx.appcompat.widget.ButtonBarLayout>
+    </LinearLayout>
+</layout>

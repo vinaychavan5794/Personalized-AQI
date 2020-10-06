@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.fitbitsample"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.scottyab:secure-preferences-lib:0.1.4'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.intuit.sdp:sdp-android:1.0.4'
+    implementation 'com.intuit.ssp:ssp-android:1.0.4'
+    implementation 'io.paperdb:paperdb:2.6'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.gms:play-services:10.0.1'
+
+    implementation 'com.android.support:customtabs:27.1.1'
+    implementation('com.afollestad.material-dialogs:commons:0.8.6.1') {
+        transitive = true
+        exclude group: 'com.android.support'
+    }
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

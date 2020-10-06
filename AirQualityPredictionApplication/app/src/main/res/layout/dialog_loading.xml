@@ -1,0 +1,35 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="message"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="@dimen/_250sdp"
+        android:minWidth="@dimen/_255sdp">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progress"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:text="@{message ?? @string/processing}"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_12ssp"
+            tools:text="Message" />
+    </RelativeLayout>
+</layout>

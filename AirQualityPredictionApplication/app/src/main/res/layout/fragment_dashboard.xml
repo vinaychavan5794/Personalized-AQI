@@ -1,0 +1,86 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="String" />
+
+        <variable
+            name="activity"
+            type="String" />
+
+        <variable
+            name="hr"
+            type="String" />
+        <variable
+            name="sleep"
+            type="String" />
+
+        <variable
+            name="activeMins"
+            type="int" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/profile_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="@{user}"
+                    android:textColor="@color/endblue"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/activity_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="@{activity}"
+                    android:textColor="@color/endsteps"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Hr_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="@{hr}"
+                    android:textColor="@color/endred"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sleep_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="@{sleep}"
+                    android:textColor="@color/sleep"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
